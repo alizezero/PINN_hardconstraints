@@ -69,5 +69,46 @@
 * z9 = $1-y51$
 * z10 = $log(1-y51)$
 
+## 3.方程变换与Jacobi矩阵解析
+### PolySL EOS
+#### log-exp变换后方程
+$$
+\begin{aligned}
+    z1 + \overline{T} * z5 + \overline{T} * (1-r_{mix}^-1) * y50 = -\overline{P} \\
+    z3 - z2 = 0 \\
+    z4 + y50 = 1 \\ 
+    y50 - \exp(z2) = 0 \\
+    z1 - \exp(z3) = 0 \\
+    z4 - \exp(z5) = 0
+\end{aligned}
+$$
+
+#### Jacobi矩阵
+
+$$
+J_y =
+\begin{bmatrix}
+    \overline{T} * (1-r_{mix}^-1) \\
+    0 \\
+    1 \\
+    1 \\
+    0 \\
+    0
+\end{bmatrix}
+$$
+
+$$
+J_z =
+\begin{bmatrix}
+    1 & 0 & 0 & 0 & \overline{T} \\
+    0 & -2 & 1 & 0 & 0 \\
+    0 & 0 & 0 & 1 & 0 \\
+    0 & -\exp(z2) & 0 & 0 & 0 \\
+    1 & 0 & -\exp(z3) & 0 & 0 \\
+    0 & 0 & 0 & 1 & -\exp(z5) \\
+\end{bmatrix}
+$$
+
+
 
 
